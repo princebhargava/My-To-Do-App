@@ -5,7 +5,7 @@ label = sg.Text("Type in a To-Do:")
 input_box = sg.InputText(tooltip="Enter todo",key="Todo")
 add_button = sg.Button("ADD")
 listbox = sg.Listbox(values=functions.get_todos(),key="todos",
-                     enable_events=True,size=[45,10])
+                     enable_events=True, size=[45,10])
 edit_button = sg.Button("Edit")
 window = sg.Window('My To-Do App',
                    [[label],[input_box,add_button],[listbox,edit_button]],
