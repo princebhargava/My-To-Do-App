@@ -1,5 +1,5 @@
-open the windows
-start the app
-Do programming
-Start coding in Python
-do import
+start
+code
+run
+compilingstart
+end
