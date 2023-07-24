@@ -20,7 +20,7 @@ complete_button = sg.Button("Complete",tooltip="Complete Todo",key="Complete")
 exit_button = sg.Button("Exit")
 window = sg.Window('My To-Do App',
                    [[clock],[label],[input_box,add_button],[listbox,edit_button,complete_button],[exit_button]],
-                   font=("Helvetica",25))
+                   font=("Helvetica" ,25))
 while True:
     event,values = window.read(timeout=10)
     print(event)
