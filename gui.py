@@ -1,15 +1,22 @@
 import functions
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("text.txt"):
+    with open("text.txt","w") as file:
+        pass
+
 sg.theme("Black")
+
 clock = sg.Text("",key="clock")
 label = sg.Text("Type in a To-Do:")
 input_box = sg.InputText(tooltip="Enter todo",key="todo")
-add_button = sg.Button(size=10,image_source="add.png", mouseover_colors="LightBlue",tooltip="Add Todo",key="Add")
+add_button = sg.Button("Add",tooltip="Add Todo",key="Add")
 listbox = sg.Listbox(values=functions.get_todos(),key="todos",
                      enable_events=True, size=[45,10])
 edit_button = sg.Button("Edit")
-complete_button = sg.Button(size=10,image_source="complete.png", mouseover_colors="LightBlue",tooltip="Complete Todo",key="Complete")
+complete_button = sg.Button("Complete",tooltip="Complete Todo",key="Complete")
 exit_button = sg.Button("Exit")
 window = sg.Window('My To-Do App',
                    [[clock],[label],[input_box,add_button],[listbox,edit_button,complete_button],[exit_button]],
@@ -20,9 +27,9 @@ while True:
     print(values)
     window["clock"].update(value=time.strftime("%b %d, %y %H:%M:%S"))
     match  event:
-        case "ADD":
+        case "Add":
             todos = functions.get_todos()
-            new_todo = values["todo"] + "\n"
+            new_todo = values[ "todo"] + "\n"
             todos.append(new_todo)
             functions.write_todos(todos)
             window['todos'].update(values=todos)
