@@ -1,2 +1,6 @@
-start
-lm;.
+Do the laundry
+return the books to the library
+visit the new mall
+print pictures
+fix the floor
+buy grocery
