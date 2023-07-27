@@ -4,3 +4,4 @@ visit the new mall
 print pictures
 fix the floor
 buy grocery
+get up
